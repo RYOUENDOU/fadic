@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
-export const Login: FC = () => {
+const Login: FC = () => {
   const router = useRouter();
 
   const moveSelectClothes = () => {
@@ -39,3 +39,5 @@ export const Login: FC = () => {
     </>
   );
 };
+
+export default Login;

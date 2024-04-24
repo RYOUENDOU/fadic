@@ -1,4 +1,4 @@
-import WeatherButton from "@/component/Atoms/WeatherButton";
+// import WeatherButton from "@/component/Atoms/WeatherButton";
 import ClothesArea from "@/component/Template/ClothesArea";
 import Footer from "@/component/Template/Footer";
 import { Header } from "@/component/Template/Header";

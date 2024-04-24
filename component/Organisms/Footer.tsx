@@ -8,21 +8,20 @@ import { Box, Button, Icon } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
-const FooterIcons: FC = () => {
+const Footer: FC = () => {
   const router = useRouter();
 
-// クリックしたらリストに追加されたり、リストにあったらremoveされたりする処理。
-const clickIcon = () => {
-  router.push("/practiceIndex");
-
-};
+  // クリックしたらリストに追加されたり、リストにあったらremoveされたりする処理。
+  const sendPath = (path: string) => {
+    router.push(path);
+  };
 
   return (
     <>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
+          gridTemplateColumns: "repeat(3, 1fr)",
         }}
       >
         <Button
@@ -33,8 +32,7 @@ const clickIcon = () => {
             display: "flex",
             flexFlow: "column",
           }}
-          onClick={() => clickIcon()}
-
+          onClick={() => sendPath("/")}
         >
           <div></div>
           <Home />
@@ -48,9 +46,10 @@ const clickIcon = () => {
             display: "flex",
             flexFlow: "column",
           }}
+          onClick={() => sendPath("/calendar")}
         >
           <CalendarMonth />
-          画面2
+          カレンダー
         </Button>
         <Button
           sx={{
@@ -64,21 +63,9 @@ const clickIcon = () => {
           <DoorSlidingOutlined />
           画面3
         </Button>
-        <Button
-          sx={{
-            height: "10vh",
-            backgroundColor: "gainsboro",
-            "&:hover": { backgroundColor: "silver" },
-            display: "flex",
-            flexFlow: "column",
-          }}
-        >
-          <Person />
-          画面4
-        </Button>
       </Box>
     </>
   );
 };
 
-export default FooterIcons;
+export default Footer;
