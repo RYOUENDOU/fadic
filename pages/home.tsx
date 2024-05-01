@@ -1,9 +1,6 @@
-import { Box, Container, Paper, Typography } from "@mui/material";
-import TitleText from "@/component/Atoms/TitleText";
+import { Box, Container } from "@mui/material";
 import Image from "next/image";
 import { FC } from "react";
-import TutorialFooter from "@/component/Organisms/TutorialFooter";
-import FooterIcons from "@/component/Organisms/FooterIcons";
 import Footer from "@/component/Organisms/Footer";
 import DisplayWeather from "@/component/Template/DisplayWeather";
 import PurposeOption from "@/component/Organisms/PurposeOption";
@@ -14,9 +11,9 @@ const register_clothes: FC = () => {
     <>
       <Container>
         <DisplayWeather />
-        <Box sx={{marginTop:"4%"}}>
-        <PurposeOption />
-        <RecommendFassion />
+        <Box sx={{ marginTop: "4%" }}>
+          <PurposeOption />
+          <RecommendFassion />
         </Box>
       </Container>
       <Footer />

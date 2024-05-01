@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { FC, useState } from "react";
+import { FC } from "react";
 
 const activeButtonColor = (): string => {
   return "dodgerblue";
@@ -19,7 +19,7 @@ type Props = {
   setIsMaleActive: (isMaleActive: boolean) => void;
 };
 
-const SelectSexButtons: FC<Props> = ({isMaleActive, setIsMaleActive}) => {
+const SelectSexButtons: FC<Props> = ({ isMaleActive, setIsMaleActive }) => {
   const handleButtonClick = (selected: boolean): void => {
     setIsMaleActive(selected);
   };

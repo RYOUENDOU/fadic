@@ -1,9 +1,4 @@
-import {
-  Android,
-  Assistant,
-  Attachment,
-  BackHand,
-} from "@mui/icons-material";
+import { Assistant, Attachment, BackHand } from "@mui/icons-material";
 import { Box, Button } from "@mui/material";
 import React, { FC } from "react";
 

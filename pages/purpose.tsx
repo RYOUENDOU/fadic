@@ -1,21 +1,12 @@
-import { Box, Container } from "@mui/material";
-import TitleText from "@/component/Atoms/TitleText";
+import { Container } from "@mui/material";
 import Image from "next/image";
 import { FC } from "react";
 import TutorialFooter from "@/component/Organisms/TutorialFooter";
 
-const titleText: string = `気候と目的・シーンから
-場にあったコーディネートを提案`;
-
 const purpose: FC = () => {
   return (
-    <>
-      <Container>
-        {/* <Box sx={{ textAlign: "center", marginTop: "15%" }}>
-          <TitleText titleText={titleText} />
-        </Box> */}
-        <TutorialFooter nextPagePath={"register_clothes"} />
-      </Container>
+    <Container>
+      <TutorialFooter nextPagePath={"register_clothes"} />
       <Image
         src={"/onbording/purpose.png"}
         layout={`fill`}
@@ -23,7 +14,7 @@ const purpose: FC = () => {
         alt={"背景画像"}
         style={{ zIndex: -1 }}
       />
-    </>
+    </Container>
   );
 };
 export default purpose;

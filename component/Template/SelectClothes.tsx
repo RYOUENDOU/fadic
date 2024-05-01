@@ -1,8 +1,5 @@
-import { Box, Paper } from "@mui/material";
 import { FC } from "react";
 import ClothesCard from "../Organisms/ClothesCard";
-import { HasClothesColors } from "../Types/HasClothesColors";
-import { ClothesColorOption } from "../Types/ClothesColorOptions";
 
 type Props = {
   isMaleActive: boolean;
@@ -14,8 +11,6 @@ type Props = {
   setSelectedSkirtColorList: (selectedSkirtColorList: string[]) => void;
 };
 
-
-
 const SelectClothes: FC<Props> = ({
   isMaleActive,
   selectedTopsColorList,
@@ -23,7 +18,7 @@ const SelectClothes: FC<Props> = ({
   selectedPantsColorList,
   setSelectedPantsColorList,
   selectedSkirtColorList,
-  setSelectedSkirtColorList
+  setSelectedSkirtColorList,
 }) => {
   return (
     <>

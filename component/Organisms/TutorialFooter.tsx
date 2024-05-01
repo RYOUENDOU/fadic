@@ -5,8 +5,9 @@ import NextPageButtonForTutorial from "../Atoms/NextPageButtonForTutorial";
 
 type Props = {
     nextPagePath: string;
+    isFinalPage?: boolean;
   };
-const TutorialFooter: FC<Props> = ({ nextPagePath }) => {
+const TutorialFooter: FC<Props> = ({ nextPagePath, isFinalPage = false }) => {
 
   // すワイプっぽいやつ必要？あれスワイプする用のライブラリ使うから、今回みたいにスワイプ画像無い時は独自実装になりそう。あのアイコン優先度低そうなら後ろに置きたいのが本音
   return (
@@ -21,7 +22,7 @@ const TutorialFooter: FC<Props> = ({ nextPagePath }) => {
         transform: "translateX(-50%)",
       }}
     >
-      <NextPageButtonForTutorial nextPagePath={nextPagePath} />
+      <NextPageButtonForTutorial nextPagePath={nextPagePath} isFinalPage={isFinalPage}/>
     </Box>
   );
 };

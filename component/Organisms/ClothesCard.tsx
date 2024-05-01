@@ -1,10 +1,7 @@
 import { Box, Paper } from "@mui/material";
 import { FC } from "react";
 import ClothesIcon from "../Atoms/ClothesIcon";
-import { Height } from "@mui/icons-material";
 import ColorIcons from "../Molecules/ColorIcons";
-import { HasClothesColors } from "../Types/HasClothesColors";
-import { ClothesColorOption } from "../Types/ClothesColorOptions";
 
 type Props = {
   clothesType: string;
@@ -34,7 +31,11 @@ const ClothesCard: FC<Props> = ({
         <ClothesIcon clothesType={clothesType} />
       </Box>
       <Box>
-        <ColorIcons clothesType={clothesType}selectedClothesColorList={selectedClothesColorList} setSelectedClothesColorList={setSelectedClothesColorList}/>
+        <ColorIcons
+          clothesType={clothesType}
+          selectedClothesColorList={selectedClothesColorList}
+          setSelectedClothesColorList={setSelectedClothesColorList}
+        />
       </Box>
     </Paper>
   );

@@ -7,13 +7,11 @@ import "swiper/css/pagination";
 import { Box, Typography, css } from "@mui/material";
 import { FC } from "react";
 import { Android, Clear, CoPresent } from "@mui/icons-material";
-import { ButtomIcon } from "../Types/ButtomIcon";
 import { RecommendPictureInfo } from "../Types/RecommendPictureInfo";
 
 // reccomend画像の一覧。実際にはDBから取得
 const images = ["/imageCheck.png", "/zoro.png", "/imageCheck.png"];
 const topsColor: string = "yellow";
-const bottom: ButtomIcon = {type: "bottom", color:"black"}
 
 const recommendPictureList: RecommendPictureInfo[] = [{
   image: "/imageCheck.png",
