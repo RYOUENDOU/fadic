@@ -1,16 +1,13 @@
-import { Box, Container } from "@mui/material";
-import TitleText from "@/component/Atoms/TitleText";
+import { Container } from "@mui/material";
 import Image from "next/image";
 import { FC } from "react";
-import TutorialFooter from "@/component/Organisms/TutorialFooter";
-
+import Calendar from "@/component/Organisms/Calendar";
 
 const calendar: FC = () => {
   return (
-      <Container>
-       <h1>カレンダーページ</h1>
-      </Container>
-      
+    <Container>
+      <Calendar></Calendar>
+    </Container>
   );
 };
 export default calendar;
