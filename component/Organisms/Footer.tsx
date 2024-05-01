@@ -7,6 +7,7 @@ import {
 import { Box, Button, Icon } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC } from "react";
+import Image from "next/image";
 
 const Footer: FC = () => {
   const router = useRouter();
@@ -20,49 +21,73 @@ const Footer: FC = () => {
     <>
       <Box
         sx={{
+          position: "fixed",
+          bottom: 0,
+          width: "100%",
+          backgroundColor: "white",
           display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          height: "8%",
+          gridTemplateColumns: "1fr 1fr 1fr",
+
+          alignItems: "center",
         }}
       >
-        <Button
+        <Box
           sx={{
-            height: "10vh",
-            backgroundColor: "gainsboro",
-            "&:hover": { backgroundColor: "silver" },
             display: "flex",
-            flexFlow: "column",
-          }}
-          onClick={() => sendPath("/")}
-        >
-          <div></div>
-          <Home />
-          ホーム
-        </Button>
-        <Button
-          sx={{
-            height: "10vh",
-            backgroundColor: "gainsboro",
-            "&:hover": { backgroundColor: "silver" },
-            display: "flex",
-            flexFlow: "column",
-          }}
-          onClick={() => sendPath("/calendar")}
-        >
-          <CalendarMonth />
-          カレンダー
-        </Button>
-        <Button
-          sx={{
-            height: "10vh",
-            backgroundColor: "gainsboro",
-            "&:hover": { backgroundColor: "silver" },
-            display: "flex",
-            flexFlow: "column",
+            justifyContent: "flex-end",
+            paddingRight: "8%",
+            "& img": {
+              height: "9%",
+              marginTop: "5%",
+            },
+  
           }}
         >
-          <DoorSlidingOutlined />
-          画面3
-        </Button>
+          <Image
+            src={"/icon/homeIcon.png"}
+            alt={"home"}
+            height={50}
+            width={35}
+            onClick={() => sendPath("/")}
+          />
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            paddingLeft: "10%",
+            "& img": {
+              height: "95%",
+              marginTop: "5%",
+            },
+
+          }}
+        >
+          <Image
+            src={"/icon/calendarIcon.png"}
+            alt={"home"}
+            height={50}
+            width={60}
+            onClick={() => sendPath("/calendar")}
+          />
+        </Box>
+        <Box
+          sx={{
+            "& img": {
+              height: "95%",
+              marginTop: "5%",
+            },
+          }}
+        >
+          <Image
+            src={"/icon/closetIcon.png"}
+            alt={"home"}
+            height={50}
+            width={70}
+            onClick={() => sendPath("/closet")}
+          />
+        </Box>
       </Box>
     </>
   );

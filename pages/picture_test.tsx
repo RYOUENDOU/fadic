@@ -4,20 +4,23 @@ import Image from "next/image";
 import { FC } from "react";
 import TutorialFooter from "@/component/Organisms/TutorialFooter";
 
-const AboutBetaVersion: FC = () => {
+const register_clothes: FC = () => {
   return (
     <>
       <Container>
-        <TutorialFooter nextPagePath={"home"} isFinalPage={true}/>
-      </Container>
+        ベータ版について
+        <TutorialFooter nextPagePath={"home"} />
+      <Box sx={{height: '300px', width: '300px'}}>
       <Image
-        src={"/onbording/about_beta_ver.png"}
-        layout={`fill`}
-        objectFit={`cover`}
+        src={"/image2.png"}
+        layout="fill"
+    objectFit="contain"
+        
         alt={"背景画像"}
-        style={{ zIndex: -1 }}
       />
+      </Box>
+      </Container>
     </>
   );
 };
-export default AboutBetaVersion;
+export default register_clothes;

@@ -11,13 +11,13 @@ const purpose: FC = () => {
   return (
     <>
       <Container>
-        <Box sx={{ textAlign: "center", marginTop: "15%" }}>
+        {/* <Box sx={{ textAlign: "center", marginTop: "15%" }}>
           <TitleText titleText={titleText} />
-        </Box>
+        </Box> */}
         <TutorialFooter nextPagePath={"register_clothes"} />
       </Container>
       <Image
-        src={"/sun-rays-on-cloudy-sky.jpeg"}
+        src={"/onbording/purpose.png"}
         layout={`fill`}
         objectFit={`cover`}
         alt={"背景画像"}

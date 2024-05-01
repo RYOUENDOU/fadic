@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Container>
-        <Box
+        {/* <Box
           sx={{
             marginTop: "120%",
             width: "80%",
@@ -30,11 +30,11 @@ export default function Home() {
         >
           <TitleText titleText={titleText} />
           <TutorialText text={text} />
-        </Box>
+        </Box> */}
           <TutorialFooter nextPagePath={"/purpose"}/>
       </Container>
       <Image
-        src={"/sun-rays-on-cloudy-sky.jpeg"}
+        src={"/onbording/fadic_venefit.png"}
         layout={`fill`}
         objectFit={`cover`}
         alt={"背景画像"}

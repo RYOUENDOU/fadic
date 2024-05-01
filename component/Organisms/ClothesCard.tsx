@@ -4,16 +4,19 @@ import ClothesIcon from "../Atoms/ClothesIcon";
 import { Height } from "@mui/icons-material";
 import ColorIcons from "../Molecules/ColorIcons";
 import { HasClothesColors } from "../Types/HasClothesColors";
-
+import { ClothesColorOption } from "../Types/ClothesColorOptions";
 
 type Props = {
-    clothesType: string;
-    clothesColorOptions: string[];
-    selectedClothesColors: HasClothesColors;
-    setSelectedClothesColors: (selectedClothesColors: HasClothesColors) => void
-}
+  clothesType: string;
+  selectedClothesColorList: string[];
+  setSelectedClothesColorList: (selectedClothesColorList: string[]) => void;
+};
 
-const ClothesCard: FC<Props> = ({clothesType, clothesColorOptions, selectedClothesColors, setSelectedClothesColors}) => {
+const ClothesCard: FC<Props> = ({
+  clothesType,
+  selectedClothesColorList,
+  setSelectedClothesColorList,
+}) => {
   return (
     <Paper
       sx={{
@@ -22,16 +25,16 @@ const ClothesCard: FC<Props> = ({clothesType, clothesColorOptions, selectedCloth
         gridTemplateColumns: "3fr 5fr",
         alignItems: "center",
         textAlign: "center",
-        marginBottom: '5%'
+        marginBottom: "5%",
       }}
     >
       <Box
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center"}}
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <ClothesIcon clothesType={clothesType}/>
+        <ClothesIcon clothesType={clothesType} />
       </Box>
       <Box>
-        <ColorIcons clothesColorOptions={clothesColorOptions}/>
+        <ColorIcons clothesType={clothesType}selectedClothesColorList={selectedClothesColorList} setSelectedClothesColorList={setSelectedClothesColorList}/>
       </Box>
     </Paper>
   );
