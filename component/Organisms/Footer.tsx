@@ -49,7 +49,7 @@ const Footer: FC = () => {
             alt={"home"}
             height={50}
             width={35}
-            onClick={() => sendPath("/")}
+            onClick={() => sendPath("/home")}
           />
         </Box>
         <Box

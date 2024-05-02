@@ -11,7 +11,7 @@ const DisplayWeather: FC = () => {
       <Box
         maxWidth={"95%"}
         sx={{
-          margin: "0 auto",
+          margin: "8px auto 0",
         }}
       >
         <Paper

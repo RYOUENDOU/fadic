@@ -17,7 +17,7 @@ const ClothesCard: FC<Props> = ({
   return (
     <Paper
       sx={{
-        minHeight: "12vh",
+        minHeight: "14vh",
         display: "grid",
         gridTemplateColumns: "3fr 5fr",
         alignItems: "center",

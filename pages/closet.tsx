@@ -6,10 +6,12 @@ import { HasClothesColors } from "@/component/Types/HasClothesColors";
 import { useRouter } from "next/router";
 import CaptionTextForTutorial from "@/component/Atoms/CaptionTextForTutorial";
 import Footer from "@/component/Organisms/Footer";
+import TutorialFooter from "@/component/Organisms/TutorialFooter";
 
 const textForSex: string = "持っている服の色を登録してください";
 const textForSelectClothes: string =
   "選んでいる服の色からコーディネートを提案します";
+const textForUpdateButton: string = "更新";
 
 // DBから取得してくる服のカラーリスト
 const registedClothesMock: HasClothesColors = {
@@ -24,15 +26,15 @@ const RegisterClothes: FC = () => {
   const [clothesColorOptions, setClothesColorOptions] =
     useState<HasClothesColors>();
 
-        // DBから、ユーザーが持っている服の一覧を取得するメソッド
-        const getHasClothes = (): HasClothesColors => {
-        // fetchhogehoge
-        return registedClothesMock;
-    };
-    const registedClothes: HasClothesColors = getHasClothes();
+  // DBから、ユーザーが持っている服の一覧を取得するメソッド
+  const getHasClothes = (): HasClothesColors => {
+    // fetchhogehoge
+    return registedClothesMock;
+  };
+  const registedClothes: HasClothesColors = getHasClothes();
 
   const [selectedTopsColorList, setSelectedTopsColorList] = useState<string[]>([
-    ...registedClothesMock.tops
+    ...registedClothesMock.tops,
   ]);
   const [selectedPantsColorList, setSelectedPantsColorList] = useState<
     string[]
@@ -41,22 +43,20 @@ const RegisterClothes: FC = () => {
     string[]
   >([...registedClothesMock.skirt]);
 
-  //   const router = useRouter();
 
   // 渡された引数を元に遷移先を動的に変更
 
-  //   const moveNextPage = () => {
-  //     setClothesColorOptions({
-  //       tops: selectedTopsColorList,
-  //       pants: selectedPantsColorList,
-  //       skirt: selectedSkirtColorList,
-  //     });
-  //     console.log(`tops：${selectedTopsColorList}`);
-  //     console.log(`bottoms：${selectedPantsColorList}`);
-  //     console.log(`skirt：${selectedSkirtColorList}`);
+  const updateCloset = () => {
+    setClothesColorOptions({
+      tops: selectedTopsColorList,
+      pants: selectedPantsColorList,
+      skirt: selectedSkirtColorList,
+    });
+    console.log(`tops：${selectedTopsColorList}`);
+    console.log(`bottoms：${selectedPantsColorList}`);
+    console.log(`skirt：${selectedSkirtColorList}`);
 
-  //     router.push("usable_location");
-  //   };
+  };
 
   // ここまで
 
@@ -76,7 +76,30 @@ const RegisterClothes: FC = () => {
             selectedSkirtColorList={selectedSkirtColorList}
             setSelectedSkirtColorList={setSelectedSkirtColorList}
           />
-          {/* <TutorialFooter nextPagePath={"usable_location"} /> */}
+          <Box
+          marginTop={5}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Button
+              sx={{
+                width: "15vh",
+                display: "flex",
+                justifyContent: "center",
+                backgroundColor: "rgba(100, 190, 220)",
+                color: "white",
+                ":hover": {
+                  backgroundColor: "rgba(100, 190, 220)",
+                },
+              }}
+              onClick={() => updateCloset()}
+            >
+              {textForUpdateButton}
+            </Button>
+            {/* <TutorialFooter nextPagePath={"usable_location"}  /> */}
+          </Box>
         </Box>
       </Container>
       <Footer />
