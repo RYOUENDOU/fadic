@@ -10,11 +10,11 @@ const register_clothes: FC = () => {
   return (
     <>
       <Container>
-        <DisplayWeather />
+        {/* <DisplayWeather />
         <Box sx={{ marginTop: "4%" }}>
           <PurposeOption />
           <RecommendFassion />
-        </Box>
+        </Box> */}
       </Container>
       <Footer />
       <Image
