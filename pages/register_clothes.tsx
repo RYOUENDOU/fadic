@@ -48,12 +48,15 @@ const RegisterClothes: FC = () => {
   return (
     <>
       <Container>
-        <Box marginLeft={"5%"} marginRight={"5%"}>
+        <Box margin={"50% 5% 0% 5%"} >
           <CaptionTextForTutorial text={textForSex} />
           <Box>
             <SelectSex
               isMaleActive={isMaleActive}
               setIsMaleActive={setIsMaleActive}
+              setSelectedTopsColorList={setSelectedTopsColorList}
+              setSelectedPantsColorList={setSelectedPantsColorList}
+              setSelectedSkirtColorList={setSelectedSkirtColorList}
             />
           </Box>
           <CaptionTextForTutorial text={textForSelectClothes} />

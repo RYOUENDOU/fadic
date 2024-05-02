@@ -17,16 +17,28 @@ const passiveButtonTextColor = (): string => {
 type Props = {
   isMaleActive: boolean;
   setIsMaleActive: (isMaleActive: boolean) => void;
+  setSelectedTopsColorList: (selectedTopsColorList: string[]) => void;
+  setSelectedPantsColorList: (selectedPantsColorList: string[]) => void;
+  setSelectedSkirtColorList: (selectedSkirtColorList: string[]) => void;
 };
 
-const SelectSexButtons: FC<Props> = ({ isMaleActive, setIsMaleActive }) => {
+const SelectSexButtons: FC<Props> = ({
+  isMaleActive,
+  setIsMaleActive,
+  setSelectedTopsColorList,
+  setSelectedPantsColorList,
+  setSelectedSkirtColorList,
+}) => {
   const handleButtonClick = (selected: boolean): void => {
     setIsMaleActive(selected);
+    setSelectedTopsColorList([]);
+    setSelectedPantsColorList([]);
+    setSelectedSkirtColorList([]);
   };
 
   return (
     <>
-      <Box sx={{}}>
+      <Box marginBottom={2}>
         <Button
           onClick={() => handleButtonClick(true)}
           sx={{
