@@ -2,7 +2,12 @@ import { Box, Paper, Typography } from "@mui/material";
 import { FC } from "react";
 import WeatherInfo from "../Organisms/WeatherInfo";
 
-const DisplayWeather: FC = () => {
+type Props = {
+  selectDate: number;
+  setSelectDate: (selectDate: number) => void;
+}
+
+const DisplayWeather: FC<Props> = ({selectDate, setSelectDate}) => {
   return (
     <>
       <Typography textAlign={"center"} color={"white"}>
@@ -18,7 +23,7 @@ const DisplayWeather: FC = () => {
           sx={{ backgroundColor: "rgba(145, 145, 145, 0.2)" }}
           elevation={0}
         >
-          <WeatherInfo />
+          <WeatherInfo selectDate={selectDate} setSelectDate={setSelectDate}/>
         </Paper>
       </Box>
     </>
