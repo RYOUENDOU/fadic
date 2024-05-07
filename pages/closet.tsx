@@ -1,36 +1,52 @@
 import { Box, Button, Container } from "@mui/material";
 import Image from "next/image";
 import { FC, useState } from "react";
-import SelectSex from "@/component/Molecules/SelectSexButtons";
 import SelectClothes from "@/component/Template/SelectClothes";
 import { HasClothesColors } from "@/component/Types/HasClothesColors";
 import { useRouter } from "next/router";
 import CaptionTextForTutorial from "@/component/Atoms/CaptionTextForTutorial";
+import Footer from "@/component/Organisms/Footer";
+import TutorialFooter from "@/component/Organisms/TutorialFooter";
 
-const textForSex: string = "性別を選んでください";
-const textForSelectClothes: string = "持っている服の色を全て選んでください";
+const textForSex: string = "持っている服の色を登録してください";
+const textForSelectClothes: string =
+  "選んでいる服の色からコーディネートを提案します";
+const textForUpdateButton: string = "更新";
+
+// DBから取得してくる服のカラーリスト
+const registedClothesMock: HasClothesColors = {
+  tops: ["black", "green", "blue"],
+  pants: ["yellow", "red", "brown"],
+  skirt: ["black", "white", "red"],
+};
 
 const RegisterClothes: FC = () => {
-  const [isMaleActive, setIsMaleActive] = useState<boolean>(true);
+  // 本来はDBから取ってくる
+  const isMaleActive: boolean = false;
   const [clothesColorOptions, setClothesColorOptions] =
     useState<HasClothesColors>();
 
-  const [selectedTopsColorList, setSelectedTopsColorList] = useState<string[]>(
-    []
-  );
+  // DBから、ユーザーが持っている服の一覧を取得するメソッド
+  const getHasClothes = (): HasClothesColors => {
+    // fetchhogehoge
+    return registedClothesMock;
+  };
+  const registedClothes: HasClothesColors = getHasClothes();
+
+  const [selectedTopsColorList, setSelectedTopsColorList] = useState<string[]>([
+    ...registedClothesMock.tops,
+  ]);
   const [selectedPantsColorList, setSelectedPantsColorList] = useState<
     string[]
-  >([]);
+  >([...registedClothesMock.pants]);
   const [selectedSkirtColorList, setSelectedSkirtColorList] = useState<
     string[]
-  >([]);
+  >([...registedClothesMock.skirt]);
 
-  // ここはfooter切り出しただけ。本当は残したくない
-  const router = useRouter();
 
   // 渡された引数を元に遷移先を動的に変更
 
-  const moveNextPage = () => {
+  const updateCloset = () => {
     setClothesColorOptions({
       tops: selectedTopsColorList,
       pants: selectedPantsColorList,
@@ -40,7 +56,6 @@ const RegisterClothes: FC = () => {
     console.log(`bottoms：${selectedPantsColorList}`);
     console.log(`skirt：${selectedSkirtColorList}`);
 
-    router.push("usable_location");
   };
 
   // ここまで
@@ -48,17 +63,9 @@ const RegisterClothes: FC = () => {
   return (
     <>
       <Container>
-        <Box margin={"50% 5% 0% 5%"} >
+        <Box marginLeft={"5%"} marginRight={"5%"}>
           <CaptionTextForTutorial text={textForSex} />
-          <Box>
-            <SelectSex
-              isMaleActive={isMaleActive}
-              setIsMaleActive={setIsMaleActive}
-              setSelectedTopsColorList={setSelectedTopsColorList}
-              setSelectedPantsColorList={setSelectedPantsColorList}
-              setSelectedSkirtColorList={setSelectedSkirtColorList}
-            />
-          </Box>
+
           <CaptionTextForTutorial text={textForSelectClothes} />
           <SelectClothes
             isMaleActive={isMaleActive}
@@ -69,34 +76,34 @@ const RegisterClothes: FC = () => {
             selectedSkirtColorList={selectedSkirtColorList}
             setSelectedSkirtColorList={setSelectedSkirtColorList}
           />
-          {/* <TutorialFooter nextPagePath={"usable_location"} /> */}
           <Box
+          marginTop={5}
             sx={{
-              marginTop: "8%",
-              width: "80%",
-              textAlign: "center",
-              position: "fixed",
-              bottom: "5%",
-              left: "50%",
-              transform: "translateX(-50%)",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
             <Button
               sx={{
-                width: "20vh",
-                backgroundColor: "#333333",
+                width: "15vh",
+                display: "flex",
+                justifyContent: "center",
+                backgroundColor: "rgba(100, 190, 220)",
                 color: "white",
                 ":hover": {
-                  backgroundColor: "#666666",
+                  backgroundColor: "rgba(100, 190, 220)",
                 },
               }}
-              onClick={() => moveNextPage()}
+              onClick={() => updateCloset()}
             >
-              次へ
+              {textForUpdateButton}
             </Button>
+            {/* <TutorialFooter nextPagePath={"usable_location"}  /> */}
           </Box>
         </Box>
       </Container>
+      <Footer />
+
       <Image
         src={"/sun-rays-on-cloudy-sky.jpeg"}
         layout={`fill`}

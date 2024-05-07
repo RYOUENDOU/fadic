@@ -1,16 +1,18 @@
 import { Box, Container } from "@mui/material";
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useState } from "react";
 import Footer from "@/component/Organisms/Footer";
 import DisplayWeather from "@/component/Template/DisplayWeather";
 import PurposeOption from "@/component/Organisms/PurposeOption";
 import RecommendFassion from "@/component/Template/RecommendFassion";
 
-const register_clothes: FC = () => {
+const Home: FC = () => {
+const [selectDate, setSelectDate] = useState<number>(0);
+
   return (
     <>
       <Container>
-        <DisplayWeather />
+        <DisplayWeather selectDate={selectDate} setSelectDate={setSelectDate}/>
         <Box sx={{ marginTop: "4%" }}>
           <PurposeOption />
           <RecommendFassion />
@@ -27,4 +29,4 @@ const register_clothes: FC = () => {
     </>
   );
 };
-export default register_clothes;
+export default Home;
