@@ -8,11 +8,10 @@ import Image from "next/image";
 import { FavoriteInfo } from "../Types/FavoriteInfo";
 
 type Props = {
-    favoriteInfo: FavoriteInfo
-}
+  favoriteInfo: FavoriteInfo;
+};
 
-
-const CordinateListInfo: FC<FavoriteInfo> = (favoriteInfo) => {
+const CordinateListInfo: FC<Props> = ({ favoriteInfo }) => {
   const displayTops = (color: string): React.ReactNode => {
     return <Android fontSize="large" style={{ color: color }} />;
   };
@@ -26,86 +25,65 @@ const CordinateListInfo: FC<FavoriteInfo> = (favoriteInfo) => {
   };
 
   return (
-    
-        <Box
-          marginTop={3}
-          marginBottom={3}
-          sx={{ display: "grid", gridTemplateColumns: "180px 1fr" }}
-        >
-          <Box>
-            <Box display={"flex"} marginBottom={2}>
-              <CalendarText text={favoriteInfo.month} />
-              <CalendarBigText text={favoriteInfo.date} />
-              <CalendarWeekText text={favoriteInfo.week} />
-            </Box>
-            <Button
-              sx={{
-                backgroundColor: "silver",
-                borderRadius: "20px",
-                color: "white",
-                height: 25,
-                "&:hover": { backgroundColor: "rgba(100, 190, 220, 0.8)" },
-                marginBottom: "10px",
-              }}
-            >
-              {favoriteInfo.purpose}
-            </Button>
+    <Box>
+      <Box display={"flex"} marginBottom={2}>
+        <CalendarText text={favoriteInfo.month} />
+        <CalendarBigText text={favoriteInfo.date} />
+        <CalendarWeekText text={favoriteInfo.week} />
+      </Box>
+      <Button
+        sx={{
+          backgroundColor: "silver",
+          borderRadius: "20px",
+          color: "white",
+          height: 25,
+          "&:hover": { backgroundColor: "rgba(100, 190, 220, 0.8)" },
+          marginBottom: "10px",
+          paddingBottom: "0px"
+        }}
+      >
+        {favoriteInfo.purpose}
+      </Button>
 
-            <Box display={"flex"}>
-              <Image
-                src={`/icon/${favoriteInfo.weather}Icon_calendar.png`}
-                width={25}
-                height={25}
-                alt="test_image"
-                style={{ marginBottom: "2px" }}
-              />
-              <Box sx={{ marginLeft: "10px" }}>
-                <CalendarText
-                  text={`${favoriteInfo.maxTemp}°|${favoriteInfo.minTemp}°`}
-                />
-              </Box>
-            </Box>
-
-            <Box
-              sx={{
-                backgroundColor: "white",
-                height: "50px",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  width: "120px",
-                }}
-              >
-                {displayTops(favoriteInfo.tops_color)}
-                <Box paddingTop={1}>
-                  <Clear color="disabled" fontSize="small" />
-                </Box>
-
-                {displayBottoms(
-                  favoriteInfo.bottoms_type,
-                  favoriteInfo.bottoms_color
-                )}
-              </Box>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Image
-              src={"/imageCheck.png"}
-              width={190}
-              height={190}
-              alt="test_image"
-            />
-          </Box>
+      <Box display={"flex"}>
+        <Image
+          src={`/icon/${favoriteInfo.weather}Icon_calendar.png`}
+          width={25}
+          height={25}
+          alt="test_image"
+          style={{ marginBottom: "2px" }}
+        />
+        <Box sx={{ marginLeft: "10px" }}>
+          <CalendarText
+            text={`${favoriteInfo.maxTemp}°|${favoriteInfo.minTemp}°`}
+          />
         </Box>
+      </Box>
 
+      <Box
+        sx={{
+          backgroundColor: "white",
+          height: "50px",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            width: "120px",
+          }}
+        >
+          {displayTops(favoriteInfo.tops_color)}
+          <Box paddingTop={1}>
+            <Clear color="disabled" fontSize="small" />
+          </Box>
+
+          {displayBottoms(
+            favoriteInfo.bottoms_type,
+            favoriteInfo.bottoms_color
+          )}
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

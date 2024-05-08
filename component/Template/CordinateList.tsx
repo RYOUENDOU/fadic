@@ -6,6 +6,8 @@ import { Box, Button } from "@mui/material";
 import { AdfScanner, AllInclusive, Android, Clear } from "@mui/icons-material";
 import Image from "next/image";
 import { FavoriteInfo } from "../Types/FavoriteInfo";
+import CalendarListInfo from "./CalendarListInfo";
+import PictureForCalendarList from "../Atoms/PictureForCalendarList";
 
 const FavoriteInfoList: FavoriteInfo[] = [
   {
@@ -32,7 +34,7 @@ const FavoriteInfoList: FavoriteInfo[] = [
     tops_color: "green",
     bottoms_type: "skirt",
     bottoms_color: "black",
-    image: "/imageCheck.png",
+    image: "/zoro.png",
   },
   {
     month: "4",
@@ -91,85 +93,15 @@ const CordinateList: FC = () => {
   return (
     <Box marginBottom={10}>
       {FavoriteInfoList.map((favoriteInfo, index) => (
-        <Box
+        <><Box
           key={index}
           marginTop={3}
           marginBottom={3}
           sx={{ display: "grid", gridTemplateColumns: "180px 1fr" }}
         >
-          <Box>
-            <Box display={"flex"} marginBottom={2}>
-              <CalendarText text={favoriteInfo.month} />
-              <CalendarBigText text={favoriteInfo.date} />
-              <CalendarWeekText text={favoriteInfo.week} />
-            </Box>
-            <Button
-              sx={{
-                backgroundColor: "silver",
-                borderRadius: "20px",
-                color: "white",
-                height: 25,
-                "&:hover": { backgroundColor: "rgba(100, 190, 220, 0.8)" },
-                marginBottom: "10px",
-              }}
-            >
-              {favoriteInfo.purpose}
-            </Button>
-
-            <Box display={"flex"}>
-              <Image
-                src={`/icon/${favoriteInfo.weather}Icon_calendar.png`}
-                width={25}
-                height={25}
-                alt="test_image"
-                style={{ marginBottom: "2px" }}
-              />
-              <Box sx={{ marginLeft: "10px" }}>
-                <CalendarText
-                  text={`${favoriteInfo.maxTemp}°|${favoriteInfo.minTemp}°`}
-                />
-              </Box>
-            </Box>
-
-            <Box
-              sx={{
-                backgroundColor: "white",
-                height: "50px",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  width: "120px",
-                }}
-              >
-                {displayTops(favoriteInfo.tops_color)}
-                <Box paddingTop={1}>
-                  <Clear color="disabled" fontSize="small" />
-                </Box>
-
-                {displayBottoms(
-                  favoriteInfo.bottoms_type,
-                  favoriteInfo.bottoms_color
-                )}
-              </Box>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Image
-              src={"/imageCheck.png"}
-              width={190}
-              height={190}
-              alt="test_image"
-            />
-          </Box>
-        </Box>
+          <CalendarListInfo favoriteInfo={favoriteInfo} />
+          <PictureForCalendarList picture={favoriteInfo.image} />
+        </Box><Box border={"solid 0.1px"} borderColor={"gainsboro"}/></>
       ))}
     </Box>
   );
