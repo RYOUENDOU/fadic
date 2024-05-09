@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from "@mui/material";
 import { FC } from "react";
-import ContentText from "../Atoms/contentText";
+import ContentText from "../Atoms/ContentText";
 import { Android } from "@mui/icons-material";
 import Image from "next/image";
 import { WeatherData } from "../Types/WeatherData";
@@ -39,7 +39,6 @@ const weatherDataList: WeatherData[] = [
 
 const WeatherInfo: FC<Props> = ({ selectDate, setSelectDate }) => {
   const iconColor = (iconIndex: number): string => {
-    console.log(iconIndex);
     if (selectDate == iconIndex) {
       return "rgba(100, 190, 220, 0.8)";
     }

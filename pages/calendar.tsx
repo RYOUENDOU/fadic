@@ -1,19 +1,19 @@
 import { Box, Container } from "@mui/material";
 import Image from "next/image";
 import { FC } from "react";
-import Calendar from "@/component/Organisms/Calendar";
+import CalendarArea from "@/component/Organisms/CalendarArea";
 import Footer from "@/component/Organisms/Footer";
 import CordinateList from "@/component/Template/CordinateList";
 
-const calendar: FC = () => {
+const Calendar: FC = () => {
   return (
     <>
       <Container >
-        {/* <Calendar></Calendar> */}
-        <CordinateList />
+        <CalendarArea />
+        {/* <CordinateList /> */}
       </Container>
       <Footer />
     </>
   );
 };
-export default calendar;
+export default Calendar;
