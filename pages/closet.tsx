@@ -20,7 +20,7 @@ const registedClothesMock: HasClothesColors = {
   skirt: ["black", "white", "red"],
 };
 
-const RegisterClothes: FC = () => {
+const Closet: FC = () => {
   // 本来はDBから取ってくる
   const isMaleActive: boolean = false;
   const [clothesColorOptions, setClothesColorOptions] =
@@ -114,4 +114,4 @@ const RegisterClothes: FC = () => {
     </>
   );
 };
-export default RegisterClothes;
+export default Closet;

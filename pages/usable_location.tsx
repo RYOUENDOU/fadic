@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FC } from "react";
 import TutorialFooter from "@/component/Organisms/TutorialFooter";
 
-const usable_location: FC = () => {
+const UsableLocation: FC = () => {
   return (
     <Container>
       <TutorialFooter nextPagePath={"about_beta_version"} />
@@ -17,4 +17,4 @@ const usable_location: FC = () => {
     </Container>
   );
 };
-export default usable_location;
+export default UsableLocation;
