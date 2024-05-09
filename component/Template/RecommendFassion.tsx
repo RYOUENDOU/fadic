@@ -81,8 +81,8 @@ const RecommendFassion: FC = () => {
                 <Box>
                   <Image
                     src={pictureInfo.image}
-                    width={330}
-                    height={330}
+                    width={345}
+                    height={345}
                     alt="test_image"
                   />
                   {/* 画像の下のアイコンを下の方に配置 */}

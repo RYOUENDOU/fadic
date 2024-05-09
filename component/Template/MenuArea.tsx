@@ -1,6 +1,7 @@
 import { Box, Drawer } from "@mui/material";
 import { FC, useState } from "react";
 import Image from "next/image";
+import DrawerMenu from "../Organisms/DrawerMenu";
 
 const MenuArea: FC = () => {
   const [drawerOpened, setDrawerOpened] = useState(false);
@@ -15,10 +16,14 @@ const MenuArea: FC = () => {
         onClick={() => setDrawerOpened(true)}
       />
       <Drawer
-        anchor={"right"}
+        anchor={"left"}
         open={drawerOpened}
         onClose={() => setDrawerOpened(false)}
-      ></Drawer>
+        PaperProps={{ style: { width: '50%' } }}
+
+      >
+        <DrawerMenu setDrawerOpened={setDrawerOpened}/>
+      </Drawer>
     </Box>
   );
 };
