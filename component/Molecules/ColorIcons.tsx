@@ -1,7 +1,6 @@
 import { FC } from "react";
 import ColorIcon from "../Atoms/ColorIcon";
 import { Box } from "@mui/material";
-import { ClothesColorOption } from "../Types/ClothesColorOptions";
 
 type Props = {
   clothesType: string;
@@ -18,13 +17,9 @@ const topsColorList: string[] = [
   "blue",
   "yellow",
 ];
-const topsColorOptions: ClothesColorOption[] = topsColorList.map((color) => {
-  return { color: color, isChecked: false };
-});
+
 const pantsColorList: string[] = ["white", "black", "gray"];
-const pantsColorOptions: ClothesColorOption[] = pantsColorList.map((color) => {
-  return { color: color, isChecked: false };
-});
+
 const skirtColorList: string[] = [
   "white",
   "black",
@@ -33,9 +28,6 @@ const skirtColorList: string[] = [
   "blue",
   "darkcyan",
 ];
-const skirtColorOptions: ClothesColorOption[] = skirtColorList.map((color) => {
-  return { color: color, isChecked: false };
-});
 
 const ColorIcons: FC<Props> = ({
   clothesType,

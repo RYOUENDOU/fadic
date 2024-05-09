@@ -3,10 +3,8 @@ import Image from "next/image";
 import { FC, useState } from "react";
 import SelectClothes from "@/component/Template/SelectClothes";
 import { HasClothesColors } from "@/component/Types/HasClothesColors";
-import { useRouter } from "next/router";
 import CaptionTextForTutorial from "@/component/Atoms/CaptionTextForTutorial";
 import Footer from "@/component/Organisms/Footer";
-import TutorialFooter from "@/component/Organisms/TutorialFooter";
 
 const textForSex: string = "持っている服の色を登録してください";
 const textForSelectClothes: string =
@@ -106,8 +104,8 @@ const Closet: FC = () => {
 
       <Image
         src={"/sun-rays-on-cloudy-sky.jpeg"}
-        layout={`fill`}
-        objectFit={`cover`}
+        layout={"fill"}
+        objectFit={"cover"}
         alt={"背景画像"}
         style={{ zIndex: -1 }}
       />

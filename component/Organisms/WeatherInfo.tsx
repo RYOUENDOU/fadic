@@ -1,7 +1,6 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { FC } from "react";
 import ContentText from "../Atoms/ContentText";
-import { Android } from "@mui/icons-material";
 import Image from "next/image";
 import { WeatherData } from "../Types/WeatherData";
 
@@ -9,7 +8,7 @@ type Props = {
   selectDate: number;
   setSelectDate: (selectDate: number) => void;
 };
- // 実際はバックエンドから取得してくる情報
+// 実際はバックエンドから取得してくる情報
 const weatherDataList: WeatherData[] = [
   {
     date: "4/30 水",

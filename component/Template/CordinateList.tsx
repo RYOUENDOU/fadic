@@ -1,10 +1,5 @@
-import { FC, useEffect, useRef } from "react";
-import CalendarText from "../Atoms/CalendarText";
-import CalendarBigText from "../Atoms/CalendarBigText";
-import CalendarWeekText from "../Atoms/CalendarWeekText";
-import { Box, Button } from "@mui/material";
-import { AdfScanner, AllInclusive, Android, Clear } from "@mui/icons-material";
-import Image from "next/image";
+import { FC } from "react";
+import { Box } from "@mui/material";
 import { FavoriteInfo } from "../Types/FavoriteInfo";
 import CalendarListInfo from "./CalendarListInfo";
 import PictureForCalendarList from "../Atoms/PictureForCalendarList";
@@ -78,30 +73,21 @@ const FavoriteInfoList: FavoriteInfo[] = [
 ];
 
 const CordinateList: FC = () => {
-  const displayTops = (color: string): React.ReactNode => {
-    return <Android fontSize="large" style={{ color: color }} />;
-  };
-
-  const displayBottoms = (type: string, color: string): React.ReactNode => {
-    if ("bottoms" == type) {
-      return <AdfScanner fontSize="large" style={{ color: color }} />;
-    } else {
-      return <AllInclusive fontSize="large" style={{ color: color }} />;
-    }
-  };
-
   return (
     <Box marginBottom={10}>
       {FavoriteInfoList.map((favoriteInfo, index) => (
-        <><Box
-          key={index}
-          marginTop={3}
-          marginBottom={3}
-          sx={{ display: "grid", gridTemplateColumns: "180px 1fr" }}
-        >
-          <CalendarListInfo favoriteInfo={favoriteInfo} />
-          <PictureForCalendarList picture={favoriteInfo.image} />
-        </Box><Box border={"solid 0.1px"} borderColor={"gainsboro"}/></>
+        <>
+          <Box
+            key={index}
+            marginTop={3}
+            marginBottom={3}
+            sx={{ display: "grid", gridTemplateColumns: "180px 1fr" }}
+          >
+            <CalendarListInfo favoriteInfo={favoriteInfo} />
+            <PictureForCalendarList picture={favoriteInfo.image} />
+          </Box>
+          <Box border={"solid 0.1px"} borderColor={"gainsboro"} />
+        </>
       ))}
     </Box>
   );

@@ -2,13 +2,11 @@ import { Box } from "@mui/material";
 import { FC } from "react";
 import NextPageButtonForTutorial from "../Atoms/NextPageButtonForTutorial";
 
-
 type Props = {
-    nextPagePath: string;
-    isFinalPage?: boolean;
-  };
+  nextPagePath: string;
+  isFinalPage?: boolean;
+};
 const TutorialFooter: FC<Props> = ({ nextPagePath, isFinalPage = false }) => {
-
   return (
     <Box
       sx={{
@@ -21,7 +19,10 @@ const TutorialFooter: FC<Props> = ({ nextPagePath, isFinalPage = false }) => {
         transform: "translateX(-50%)",
       }}
     >
-      <NextPageButtonForTutorial nextPagePath={nextPagePath} isFinalPage={isFinalPage}/>
+      <NextPageButtonForTutorial
+        nextPagePath={nextPagePath}
+        isFinalPage={isFinalPage}
+      />
     </Box>
   );
 };

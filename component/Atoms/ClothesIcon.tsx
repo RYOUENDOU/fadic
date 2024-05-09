@@ -1,5 +1,4 @@
-import { Assistant, Attachment, BackHand } from "@mui/icons-material";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { FC } from "react";
 import Image from "next/image";
 
@@ -18,7 +17,6 @@ const ClothesCard: FC<Props> = ({ clothesType }) => {
             alt="test_image"
           />
         );
-        break;
       case "pants":
         return (
           <Image
@@ -28,7 +26,6 @@ const ClothesCard: FC<Props> = ({ clothesType }) => {
             alt="test_image"
           />
         );
-        break;
       case "skirt":
         return (
           <Image
@@ -38,7 +35,6 @@ const ClothesCard: FC<Props> = ({ clothesType }) => {
             alt="test_image"
           />
         );
-        break;
       default:
         <p>アイコン不明</p>;
     }

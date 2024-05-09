@@ -1,10 +1,4 @@
-import {
-  CalendarMonth,
-  DoorSlidingOutlined,
-  Home,
-  Person,
-} from "@mui/icons-material";
-import { Box, Button, Icon } from "@mui/material";
+import { Box } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC } from "react";
 import Image from "next/image";
@@ -41,7 +35,6 @@ const Footer: FC = () => {
               height: "9%",
               marginTop: "5%",
             },
-  
           }}
         >
           <Image
@@ -61,7 +54,6 @@ const Footer: FC = () => {
               height: "95%",
               marginTop: "5%",
             },
-
           }}
         >
           <Image

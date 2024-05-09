@@ -4,18 +4,17 @@ import {
   Home,
   Person,
 } from "@mui/icons-material";
-import { Box, Button, Icon } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { useRouter } from "next/router";
 import { FC } from "react";
 
 const FooterIcons: FC = () => {
   const router = useRouter();
 
-// クリックしたらリストに追加されたり、リストにあったらremoveされたりする処理。
-const clickIcon = () => {
-  router.push("/practiceIndex");
-
-};
+  // クリックしたらリストに追加されたり、リストにあったらremoveされたりする処理。
+  const clickIcon = () => {
+    router.push("/practiceIndex");
+  };
 
   return (
     <>
@@ -34,7 +33,6 @@ const clickIcon = () => {
             flexFlow: "column",
           }}
           onClick={() => clickIcon()}
-
         >
           <div></div>
           <Home />

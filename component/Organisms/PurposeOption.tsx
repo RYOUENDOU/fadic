@@ -1,18 +1,12 @@
-import { Box, Button, Pagination, Paper, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { FC } from "react";
-import WeatherInfo from "../Organisms/WeatherInfo";
 import {
   Accessibility,
   AddAPhoto,
   AddAlarm,
   AddIcCall,
-  Android,
-  Clear,
-  CoPresent,
-  Navigation,
 } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -61,7 +55,6 @@ const PurposeOption: FC = () => {
                   borderRadius: "20px",
                   color: "white",
                   "&:hover": { backgroundColor: "rgba(100, 190, 220, 0.8)" },
-
                 }}
               >
                 {displayIcon(option)}
