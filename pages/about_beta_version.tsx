@@ -1,20 +1,15 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Image from "next/image";
 import { FC } from "react";
 import TutorialFooter from "@/component/Organisms/TutorialFooter";
+import BackgroundPicture from "@/component/Atoms/BackgroundPicture";
 
 const AboutBetaVersion: FC = () => {
   return (
-      <Container>
-        <TutorialFooter nextPagePath={"home"} isFinalPage={true}/>
-        <Image
-          src={"/onbording/about_beta_ver.png"}
-          layout={`fill`}
-          objectFit={`cover`}
-          alt={"背景画像"}
-          style={{ zIndex: -1 }}
-        />
-      </Container>
+    <Container>
+      <TutorialFooter nextPagePath={"home"} isFinalPage={true} />
+      <BackgroundPicture picture={"/onbording/about_beta_ver.png"} />
+    </Container>
   );
 };
 export default AboutBetaVersion;

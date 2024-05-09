@@ -7,7 +7,11 @@ type Props = {
 
 const TitleText: FC<Props> = ({ text }) => {
   return (
-    <Typography variant="caption" color="dimgray" sx={{ whiteSpace: "pre-line" }}>
+    <Typography
+      variant="caption"
+      color="dimgray"
+      sx={{ whiteSpace: "pre-line" }}
+    >
       {text}
     </Typography>
   );

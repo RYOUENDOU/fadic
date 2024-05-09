@@ -6,12 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Box, Typography, css } from "@mui/material";
 import React, { FC } from "react";
-import {
-  AdfScanner,
-  AllInclusive,
-  Android,
-  Clear,
-} from "@mui/icons-material";
+import { AdfScanner, AllInclusive, Android, Clear } from "@mui/icons-material";
 import { RecommendPictureInfo } from "../Types/RecommendPictureInfo";
 
 // reccomend画像の一覧。実際にはDBから取得
@@ -76,7 +71,7 @@ const RecommendFassion: FC = () => {
             return (
               // styleでcenter指定することで画像を真ん中に配置できた
               <SwiperSlide
-                key={`${index}`}
+                key={index}
                 style={{
                   display: "flex",
                   justifyContent: "center",

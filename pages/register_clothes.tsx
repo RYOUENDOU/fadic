@@ -6,6 +6,7 @@ import SelectClothes from "@/component/Template/SelectClothes";
 import { HasClothesColors } from "@/component/Types/HasClothesColors";
 import { useRouter } from "next/router";
 import CaptionTextForTutorial from "@/component/Atoms/CaptionTextForTutorial";
+import BackgroundPicture from "@/component/Atoms/BackgroundPicture";
 
 const textForSex: string = "性別を選んでください";
 const textForSelectClothes: string = "持っている服の色を全て選んでください";
@@ -97,13 +98,8 @@ const RegisterClothes: FC = () => {
           </Box>
         </Box>
       </Container>
-      <Image
-        src={"/sun-rays-on-cloudy-sky.jpeg"}
-        layout={`fill`}
-        objectFit={`cover`}
-        alt={"背景画像"}
-        style={{ zIndex: -1 }}
-      />
+      <BackgroundPicture picture={"/sun-rays-on-cloudy-sky.jpeg"} />
+
     </>
   );
 };

@@ -1,9 +1,7 @@
-import { Box, Container } from "@mui/material";
-import Image from "next/image";
+import { Container } from "@mui/material";
 import { FC } from "react";
 import CalendarArea from "@/component/Organisms/CalendarArea";
 import Footer from "@/component/Organisms/Footer";
-import CordinateList from "@/component/Template/CordinateList";
 
 const Calendar: FC = () => {
   return (
