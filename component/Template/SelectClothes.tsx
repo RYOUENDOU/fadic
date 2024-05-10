@@ -3,6 +3,7 @@ import ClothesCard from "../Organisms/ClothesCard";
 
 type Props = {
   isMaleActive: boolean;
+  isFirstRegister: boolean;
   selectedTopsColorList: string[];
   setSelectedTopsColorList: (selectedTopsColorList: string[]) => void;
   selectedPantsColorList: string[];
@@ -13,6 +14,7 @@ type Props = {
 
 const SelectClothes: FC<Props> = ({
   isMaleActive,
+  isFirstRegister,
   selectedTopsColorList,
   setSelectedTopsColorList,
   selectedPantsColorList,
@@ -24,11 +26,13 @@ const SelectClothes: FC<Props> = ({
     <>
       {/* サーバー側の処理で、clothesTypeごとにどの服の選択肢があるかを取得する。一旦はmockで選択肢を指定 */}
       <ClothesCard
+        isFirstRegister={isFirstRegister}
         clothesType="tops"
         selectedClothesColorList={selectedTopsColorList}
         setSelectedClothesColorList={setSelectedTopsColorList}
       />
       <ClothesCard
+        isFirstRegister={isFirstRegister}
         clothesType="pants"
         selectedClothesColorList={selectedPantsColorList}
         setSelectedClothesColorList={setSelectedPantsColorList}
@@ -36,6 +40,7 @@ const SelectClothes: FC<Props> = ({
       {/* これclothesTypeList作って親コンポーネントから渡して、mapでfor回す方が良さそう */}
       {isMaleActive ? null : (
         <ClothesCard
+          isFirstRegister={isFirstRegister}
           clothesType="skirt"
           selectedClothesColorList={selectedSkirtColorList}
           setSelectedClothesColorList={setSelectedSkirtColorList}

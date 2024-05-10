@@ -10,6 +10,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
+import PurposeIcon from "../Atoms/PurposeIcon";
+
 
 // 実際にはDBから取得する
 const options: string[] = ["日常", "ビジネス", "おでかけ", "アウトドア"];
@@ -20,17 +23,13 @@ const PurposeOption: FC = () => {
   const displayIcon = (option: string): React.ReactNode => {
     switch (option) {
       case "日常":
-        return <Accessibility />;
-        break;
+        return <PurposeIcon iconPath="/icon/lifeIcon.png" />
       case "ビジネス":
-        return <AddAPhoto />;
-        break;
+        return <PurposeIcon iconPath="/icon/businessIcon.png" />
       case "おでかけ":
-        return <AddAlarm />;
-        break;
+        return <PurposeIcon iconPath="/icon/walkIcon.png" />
       case "アウトドア":
-        return <AddIcCall />;
-        break;
+        return <PurposeIcon iconPath="/icon/outdoorIcon.png" />
       default:
         <></>;
     }

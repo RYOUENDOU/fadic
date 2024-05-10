@@ -51,15 +51,13 @@ const RecommendFassion: FC = () => {
     // 横幅を端末に応じて可変させたい
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         marginTop: "5%",
       }}
     >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        slidesPerView={1} //一度に表示するスライドの数
+        // spaceBetween={5}
+        // slidesPerView={1.1} //一度に表示するスライドの数
         pagination={{
           clickable: true,
         }}
@@ -76,13 +74,14 @@ const RecommendFassion: FC = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  // marginLeft: "15px"
                 }}
               >
                 <Box>
                   <Image
                     src={pictureInfo.image}
-                    width={345}
-                    height={345}
+                    width={320}
+                    height={320}
                     alt="test_image"
                   />
                   {/* 画像の下のアイコンを下の方に配置 */}

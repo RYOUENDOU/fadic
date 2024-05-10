@@ -5,6 +5,7 @@ import SelectClothes from "@/component/Template/SelectClothes";
 import { HasClothesColors } from "@/component/Types/HasClothesColors";
 import CaptionTextForTutorial from "@/component/Atoms/CaptionTextForTutorial";
 import Footer from "@/component/Organisms/Footer";
+import MenuArea from "@/component/Template/MenuArea";
 
 const textForSex: string = "持っている服の色を登録してください";
 const textForSelectClothes: string =
@@ -19,17 +20,15 @@ const registedClothesMock: HasClothesColors = {
 };
 
 const Closet: FC = () => {
-  // 本来はDBから取ってくる
-  const isMaleActive: boolean = false;
-  const [clothesColorOptions, setClothesColorOptions] =
-    useState<HasClothesColors>();
-
   // DBから、ユーザーが持っている服の一覧を取得するメソッド
   const getHasClothes = (): HasClothesColors => {
     // fetchhogehoge
     return registedClothesMock;
   };
-  const registedClothes: HasClothesColors = getHasClothes();
+  const isMaleActive: boolean = false;
+  const [clothesColorOptions, setClothesColorOptions] =
+    useState<HasClothesColors>(getHasClothes());
+
 
   const [selectedTopsColorList, setSelectedTopsColorList] = useState<string[]>([
     ...registedClothesMock.tops,
@@ -54,19 +53,21 @@ const Closet: FC = () => {
     console.log(`bottoms：${selectedPantsColorList}`);
     console.log(`skirt：${selectedSkirtColorList}`);
 
+    // DB更新処理
+    //fetch(clothesColorOptions)
   };
 
   // ここまで
-
   return (
     <>
+      <MenuArea isWhiteMenu={false}/>
       <Container>
         <Box marginLeft={"5%"} marginRight={"5%"}>
           <CaptionTextForTutorial text={textForSex} />
-
           <CaptionTextForTutorial text={textForSelectClothes} />
           <SelectClothes
             isMaleActive={isMaleActive}
+            isFirstRegister={false}
             selectedTopsColorList={selectedTopsColorList}
             setSelectedTopsColorList={setSelectedTopsColorList}
             selectedPantsColorList={selectedPantsColorList}
@@ -75,7 +76,7 @@ const Closet: FC = () => {
             setSelectedSkirtColorList={setSelectedSkirtColorList}
           />
           <Box
-          marginTop={5}
+            marginTop={5}
             sx={{
               display: "flex",
               justifyContent: "center",
@@ -83,32 +84,23 @@ const Closet: FC = () => {
           >
             <Button
               sx={{
-                width: "15vh",
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "rgba(100, 190, 220)",
+                width: "20vh",
+                backgroundColor: "#333333",
                 color: "white",
                 ":hover": {
-                  backgroundColor: "rgba(100, 190, 220)",
+                  backgroundColor: "#666666",
                 },
               }}
               onClick={() => updateCloset()}
             >
               {textForUpdateButton}
             </Button>
-            {/* <TutorialFooter nextPagePath={"usable_location"}  /> */}
           </Box>
         </Box>
       </Container>
       <Footer />
 
-      <Image
-        src={"/sun-rays-on-cloudy-sky.jpeg"}
-        layout={"fill"}
-        objectFit={"cover"}
-        alt={"背景画像"}
-        style={{ zIndex: -1 }}
-      />
+     
     </>
   );
 };

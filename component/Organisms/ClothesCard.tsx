@@ -4,18 +4,22 @@ import ClothesIcon from "../Atoms/ClothesIcon";
 import ColorIcons from "../Molecules/ColorIcons";
 
 type Props = {
+  isFirstRegister: boolean;
   clothesType: string;
   selectedClothesColorList: string[];
   setSelectedClothesColorList: (selectedClothesColorList: string[]) => void;
 };
 
 const ClothesCard: FC<Props> = ({
+  isFirstRegister,
   clothesType,
   selectedClothesColorList,
   setSelectedClothesColorList,
 }) => {
+
   return (
     <Paper
+      elevation={0}
       sx={{
         minHeight: "14vh",
         display: "grid",
@@ -23,6 +27,7 @@ const ClothesCard: FC<Props> = ({
         alignItems: "center",
         textAlign: "center",
         marginBottom: "5%",
+        backgroundColor: isFirstRegister ? "" : "gainsboro"
       }}
     >
       <Box

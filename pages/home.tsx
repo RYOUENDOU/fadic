@@ -13,7 +13,7 @@ const [selectDate, setSelectDate] = useState<number>(0);
 
   return (
     <>
-    <MenuArea />
+    <MenuArea isWhiteMenu={true}/>
       <Container>
         <DisplayWeather selectDate={selectDate} setSelectDate={setSelectDate}/>
         <Box sx={{ marginTop: "4%" }}>

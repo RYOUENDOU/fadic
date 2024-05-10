@@ -78,6 +78,7 @@ const Footer: FC = () => {
             height={50}
             width={70}
             onClick={() => sendPath("/closet")}
+            // onClick={() => sendPath("/home")}
           />
         </Box>
       </Box>

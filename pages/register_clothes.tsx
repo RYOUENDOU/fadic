@@ -63,6 +63,7 @@ const RegisterClothes: FC = () => {
           <CaptionTextForTutorial text={textForSelectClothes} />
           <SelectClothes
             isMaleActive={isMaleActive}
+            isFirstRegister={true}
             selectedTopsColorList={selectedTopsColorList}
             setSelectedTopsColorList={setSelectedTopsColorList}
             selectedPantsColorList={selectedPantsColorList}
