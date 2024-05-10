@@ -3,13 +3,21 @@ import { FC, useState } from "react";
 import Image from "next/image";
 import DrawerMenu from "../Organisms/DrawerMenu";
 
-const MenuArea: FC = () => {
+type Props = {
+  isWhiteMenu: boolean;
+};
+
+const MenuArea: FC<Props> = ({ isWhiteMenu = false }) => {
   const [drawerOpened, setDrawerOpened] = useState(false);
 
   return (
     <Box margin={2}>
       <Image
-        src={"/icon/hamburger_menu.png"}
+        src={
+          isWhiteMenu
+            ? "/icon/hamburger_menu.png"
+            : "/icon/hamburger_menu_black.png"
+        }
         width={30}
         height={30}
         alt="test_image"
@@ -19,10 +27,9 @@ const MenuArea: FC = () => {
         anchor={"left"}
         open={drawerOpened}
         onClose={() => setDrawerOpened(false)}
-        PaperProps={{ style: { width: '50%' } }}
-
+        PaperProps={{ style: { width: "50%" } }}
       >
-        <DrawerMenu setDrawerOpened={setDrawerOpened}/>
+        <DrawerMenu setDrawerOpened={setDrawerOpened} />
       </Drawer>
     </Box>
   );

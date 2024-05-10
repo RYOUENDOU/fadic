@@ -10,7 +10,7 @@ type Props = {
 const DisplayWeather: FC<Props> = ({selectDate, setSelectDate}) => {
   return (
     <>
-      <Typography textAlign={"center"} color={"white"}>
+      <Typography textAlign={"center"} color={"white"} fontSize={"small"}>
         愛媛県松山市
       </Typography>
       <Box
